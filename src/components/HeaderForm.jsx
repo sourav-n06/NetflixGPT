@@ -73,7 +73,7 @@ const HeaderForm = () => {
             <input ref={password} className=" font-semibold px-16 py-4 m-2 rounded-md  bg-slate-700  bg-opacity-70 text-slate-300" type='password' 
             placeholder='Password'></input>
 
-            <p className=" text-red-600 py-1 text-center font-bold">{errMsg}</p>
+            <p className=" text-red-600 py-1 px-16 text-center font-bold">{errMsg}</p>
 
             <button className="px-32 py-2 m-4 text-white bg-red-600 rounded-md font-bold" 
             onClick={()=>handleValidation()}>
