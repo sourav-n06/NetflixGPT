@@ -2,11 +2,12 @@ import React, { useRef, useState } from 'react'
 import isValid from '../utils/isValid';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
-
+import { useNavigate } from "react-router-dom";
 import { auth } from '../utils/firebase';
 
 const HeaderForm = () => {
 
+  const navigate = useNavigate();
   const name = useRef("");
   const email = useRef(null);
   const password = useRef(null);
@@ -30,6 +31,7 @@ const HeaderForm = () => {
           .then((userCredential) => {
         // Signed up 
         const user = userCredential.user;
+        navigate('/browse');
         // ...
       })
       .catch((error) => {
@@ -46,13 +48,13 @@ const HeaderForm = () => {
         // Signed in 
         const user = userCredential.user;
         console.log(user);
-
+        navigate('/browse');
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        setErrMsg("Couldn't find your account or Invalid email/password");
+        setErrMsg(errorCode+" "+errorMessage);
 
       });
     }
