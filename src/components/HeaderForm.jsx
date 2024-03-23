@@ -4,6 +4,10 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { auth } from '../utils/firebase';
+import { updateProfile } from "firebase/auth";
+import { useDispatch } from 'react-redux'
+import { addUser } from '../utils/userSlice';
+
 
 const HeaderForm = () => {
 
@@ -13,7 +17,7 @@ const HeaderForm = () => {
   const password = useRef(null);
   const [ errMsg, setErrMsg] = useState(null);
   const [SignDetails, setSignDetails] = useState(true);
-
+  const dispatch = useDispatch();
    const handleSignDetails = ()=>{
       setSignDetails(!SignDetails);
   }
@@ -31,13 +35,22 @@ const HeaderForm = () => {
           .then((userCredential) => {
         // Signed up 
         const user = userCredential.user;
-        navigate('/browse');
-        // ...
+
+            updateProfile(user, {
+              displayName: name.current.value , photoURL: ""
+            }).then(() => {
+              // Profile updated!
+              const { uid, email, displayName } = auth.currentUser;
+              dispatch(addUser({uid: uid,email: email, displayName: displayName}));
+            }).catch((error) => {
+              // An error occurred
+            });
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         setErrMsg("The user already exists❗");
+
         // ..
       });
 
@@ -48,8 +61,6 @@ const HeaderForm = () => {
         // Signed in 
         const user = userCredential.user;
         console.log(user);
-        navigate('/browse');
-        // ...
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -77,7 +88,7 @@ const HeaderForm = () => {
 
             <p className=" text-red-600 py-1 px-16 text-center font-bold">{errMsg}</p>
 
-            <button className="px-32 py-2 m-4 text-white bg-red-600 rounded-md font-bold" 
+            <button className="px-32 py-2 m-4 text-white bg-red-600 hover:bg-red-700 rounded-md font-bold" 
             onClick={()=>handleValidation()}>
               {SignDetails === true ? "Sign Up": "Sign In"}</button>
 
