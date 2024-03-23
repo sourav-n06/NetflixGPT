@@ -2,16 +2,22 @@ import React from 'react'
 import { signOut } from "firebase/auth";
 import { auth } from '../utils/firebase';
 import useNowPlayingMovies from '../hooks/useNowPlayingMovies';
+import MainContainer from './MainContainer';
+import SecondaryContainer from './SecondaryContainer';
+import { useNavigate } from "react-router-dom"
 const Browse = () => {
 
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const handleSignOut = () => {
       signOut(auth).then(() => {
         // Sign-out successful.
+        navigate('/')
       }).catch((error) => {
         // An error happened.
       });
+
+      console.log('Sign out ');
   }
 
 
@@ -19,20 +25,22 @@ const Browse = () => {
 
   return (
     <div>
-      <div>
-          <div className="bg-gradient-to-b from-neutral-900 px-20 py-2 flex justify-between">
-            <img className="w-40  " src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="logo"/>
+        <div className=" ">
+          <div className="  w-screen absolute z-10">
+              <div className="bg-gradient-to-b from-neutral-900 px-20 py-2 flex justify-between">
+                <img className="w-40  " src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="logo"/>
 
 
-            <div className="flex  items-center">
+                <div className="flex items-center ">
 
-            <svg className= "w-6 cursor-pointer" src="http://www.w3.org/2000/svg" onClick={handleSignOut} viewBox="0 0 512 512"><path d="M497 273L329 441c-15 15-41 4.5-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32 41-17l168 168c9.3 9.4 9.3 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96c-53 0-96 43-96 96v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z"/></svg>
-              <p className=" text-white font-semibold m-2 cursor-pointer text-sm " onClick={handleSignOut}>(Sign out)</p>
-
-          </div>
-        </div>
-        
+                    <img className= "w-6 cursor-pointer" src="https://www.svgrepo.com/show/449907/sign-out.svg" onClick={handleSignOut} />
+                    <button className=" text-white font-semibold m-2  cursor-pointer text-sm " onClick={handleSignOut}>(Sign out)</button> 
+                </div>
+              </div>
+            </div>
       </div>
+      <MainContainer/>
+      <SecondaryContainer/>
     </div>
   )
 }

@@ -12,9 +12,11 @@ import { addUser } from '../utils/userSlice';
 const HeaderForm = () => {
 
   const navigate = useNavigate();
+  
   const name = useRef("");
   const email = useRef(null);
   const password = useRef(null);
+
   const [ errMsg, setErrMsg] = useState(null);
   const [SignDetails, setSignDetails] = useState(true);
   const dispatch = useDispatch();
