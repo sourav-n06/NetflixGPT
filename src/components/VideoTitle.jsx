@@ -8,11 +8,11 @@ const VideoTitle = ({title, overview}) => {
             <h2 className=" text-4xl font-bold mb-4 text-white">{title}</h2>
             <h5 className=" text-sm/[20px] text-white">{overview}</h5>
           </div>
-          <div className="my-4 mx-2 px-4 ">
+          <div className="my-4 mx-2 px-4 flex items-center">
             <button className="m-2 px-8 py-2 text-black bg-white rounded-md font-bold hover:bg-opacity-80"><img 
-            className="w-8 inline pr-2" src = "https://www.svgrepo.com/show/514197/play.svg"/> Play</button>
-            <button className="m-2 bg-slate-300 px-6 py-2  bg-opacity-30 rounded-md text-white font-bold"><img 
-             className = "w-8  inline pr-2 p-2" src = "https://www.svgrepo.com/show/69354/info.svg"/>More info</button>
+            className="w-[28px] inline pr-2" src = "https://www.svgrepo.com/show/514197/play.svg"/> Play</button>
+            <button className="m-2 bg-slate-300 px-2 py-[9px]  bg-opacity-30 rounded-md text-white font-bold"><img 
+             className = "w-8  inline pr-2 " src = "https://www.svgrepo.com/show/69354/info.svg"/>More info</button>
           </div>
 
       </div>
