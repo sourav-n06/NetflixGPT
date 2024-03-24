@@ -78,19 +78,19 @@ const HeaderForm = () => {
 
   return (
     <div className ="flex flex-col justify-center items-center ">
-        <form className="flex flex-col w-2/6 justify-center items-center bg-black rounded-md bg-opacity-80" onSubmit={(e)=>e.preventDefault()}>
+        <form className="flex flex-col w-[475px] justify-center items-center bg-black rounded-md bg-opacity-80" onSubmit={(e)=>e.preventDefault()}>
             <h2 className='text-white text-3xl p-8 font-bold'> {SignDetails === true? "Sign Up" :"Sign In"}</h2>
 
-            {SignDetails && <input ref={name} className=" font-semibold px-16 py-4 m-2 rounded-md bg-opacity-80  bg-slate-700  bg-opacity-70 text-slate-300" type='text' placeholder='Full name'></input>}
+            {SignDetails && <input ref={name} className=" font-semibold w-80 px-4 py-4 m-2 rounded-md bg-opacity-80  bg-slate-700  bg-opacity-70 text-slate-300" type='text' placeholder='Full name'></input>}
 
-            <input ref={email} className=" font-semibold px-16 py-4 m-2 rounded-md bg-slate-700  bg-opacity-70 text-slate-300" type='text' placeholder='Email address'></input>
+            <input ref={email} className=" font-semibold w-80 px-4 py-4 m-2 rounded-md bg-slate-700  bg-opacity-70 text-slate-300" type='text' placeholder='Email address'></input>
 
-            <input ref={password} className=" font-semibold px-16 py-4 m-2 rounded-md  bg-slate-700  bg-opacity-70 text-slate-300" type='password' 
+            <input ref={password} className=" font-semibold w-80 px-4 py-4 m-2 rounded-md  bg-slate-700  bg-opacity-70 text-slate-300" type='password' 
             placeholder='Password'></input>
 
             <p className=" text-red-600 py-1 px-16 text-center font-bold">{errMsg}</p>
 
-            <button className="px-32 py-2 m-4 text-white bg-red-600 hover:bg-red-700 rounded-md font-bold" 
+            <button className="px-32 py-3 m-4 text-white bg-red-600 hover:bg-red-700 rounded-md font-bold" 
             onClick={()=>handleValidation()}>
               {SignDetails === true ? "Sign Up": "Sign In"}</button>
 

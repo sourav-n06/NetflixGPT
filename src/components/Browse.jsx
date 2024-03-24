@@ -5,6 +5,7 @@ import useNowPlayingMovies from '../hooks/useNowPlayingMovies';
 import MainContainer from './MainContainer';
 import SecondaryContainer from './SecondaryContainer';
 import { useNavigate } from "react-router-dom"
+import useAddAllMovies from '../hooks/useAddAllMovies';
 const Browse = () => {
 
 
@@ -20,14 +21,14 @@ const Browse = () => {
       console.log('Sign out ');
   }
 
-
+  useAddAllMovies();
   useNowPlayingMovies();
 
   return (
-    <div>
-        <div className=" ">
+    <div className="">
+        <div className="">
           <div className="  w-screen absolute z-10">
-              <div className="bg-gradient-to-b from-neutral-900 px-20 py-2 flex justify-between">
+              <div className="bg-gradient-to-b from-black px-20 py-2 flex justify-between">
                 <img className="w-40  " src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="logo"/>
 
 
