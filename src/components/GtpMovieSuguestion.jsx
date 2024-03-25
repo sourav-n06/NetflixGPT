@@ -1,9 +1,19 @@
 import React from 'react'
-
+import { useSelector } from "react-redux"
+import MovieCart from './MovieCart';
+import { BG_URl } from '../utils/constant';
 const GtpMovieSuguestion = () => {
+  const { GptMovies, GptMoviesNames } = useSelector((store) => store.gpt);
+  if(!GptMoviesNames) return null;
   return (
-    <div>
-      
+    <div className="" style={{backgroundImage: `url(${BG_URl})`}} >
+        <div className=" p-4 m-4 bg-black bg-opacity-80" >
+          {
+            GptMoviesNames.map((movieName, index) => 
+                <MovieCart key= {movieName} title= {movieName} movies = {GptMovies[index]}/>
+            )
+          }
+        </div>
     </div>
   )
 }
