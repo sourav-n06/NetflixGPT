@@ -8,7 +8,7 @@ const VideoTitle = ({title, overview ,id}) => {
             <h2 className="text-lg sm:text-xl md:text-4xl font-bold mb-4 text-white">{title}</h2>
             <h5 className="hidden sm:hidden md:hidden lg:inline-block text-sm-[16px] text-white">{overview}</h5>
           </div>
-          <div className="pt-4 flex items-center">
+          <div className=" sm:pt-2 md:pt-4 flex items-center">
             <Link to={"/browse/" + id}>
                   <button className=" mr-2 w-24 px-2  sm:w-32 md:px-8 py-2 md:w-32 text-black bg-white rounded-md font-bold hover:bg-opacity-80"><img 
                   className="w-[24px] md:w-[24px] inline pr-2" src = "https://www.svgrepo.com/show/514197/play.svg"/> Play</button>
