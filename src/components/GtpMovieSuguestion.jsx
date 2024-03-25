@@ -7,7 +7,7 @@ const GtpMovieSuguestion = () => {
   if(!GptMoviesNames) return null;
   return (
     <div className="" style={{backgroundImage: `url(${BG_URl})`}} >
-        <div className=" p-4 m-4 bg-black bg-opacity-80" >
+        <div className="mt-6 sm:p-2 sm:m-2 md:p-4 md:m-4 bg-black bg-opacity-80" >
           {
             GptMoviesNames.map((movieName, index) => 
                 <MovieCart key= {movieName} title= {movieName} movies = {GptMovies[index]}/>

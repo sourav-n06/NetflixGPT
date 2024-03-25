@@ -5,8 +5,8 @@ const MovieCart = ({title, movies}) => {
 
     console.log(title);
   return (
-    <div className="p-4">
-        <p className=" text-xl font-medium text-white px-8 p-4">{title}{' >'}</p>
+    <div className="p-2 md:p-4 lg:p-4">
+        <p className="px-2 lg:p-2 text-xl font-medium text-white sm:px-6 md:px-8 md:p-4">{title}{' >'}</p>
         <div className="flex overflow-x-scroll  no-scrollbar">
          <div className="">
             <div className="flex">

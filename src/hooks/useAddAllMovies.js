@@ -2,9 +2,14 @@ import React, {useEffect} from 'react'
 import { API_OPTION } from '../utils/constant';
 import { useDispatch} from "react-redux"
 import { addPopularMovie, addTopRated , addUpComing} from '../utils/movieSlice';
-
+import { useSelector } from "react-redux"
 const useAddAllMovies = () => {
     const dispatch = useDispatch();
+
+    const topRated = useSelector((store) => store.movie?.topRated);
+    const popular = useSelector((store) => store.movie?.popular);
+    const comming = useSelector((store) => store.movie?.upComing);
+
 
 
     const getTopRatedMovie = async () => {
@@ -28,9 +33,12 @@ const useAddAllMovies = () => {
     }
 
  useEffect(() =>{
-    getPopularMovies();
-    getTopRatedMovie();
-    getUpcomingMovie();
+    if(!popular)
+        getPopularMovies();
+    if(!topRated)
+        getTopRatedMovie();
+    if(!comming)
+        getUpcomingMovie();
  },[]);
 
 }

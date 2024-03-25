@@ -24,7 +24,7 @@ const VideoBackGround = ({movId}) => {
     }
 
     useEffect(() =>{
-      getMovieVideo();
+      !trailer && getMovieVideo();
     },[]);
 
     

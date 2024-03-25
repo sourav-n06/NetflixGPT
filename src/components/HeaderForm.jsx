@@ -7,11 +7,18 @@ import { auth } from '../utils/firebase';
 import { updateProfile } from "firebase/auth";
 import { useDispatch } from 'react-redux'
 import { addUser } from '../utils/userSlice';
+import { SUPPORTED_LANGUAGES } from '../utils/constant';
+import { useSelector} from "react-redux"
+import { changeLang } from '../utils/configSlice';
+import { langLogin } from '../utils/langConstant';
 
 
 const HeaderForm = () => {
 
   const navigate = useNavigate();
+
+  const langKey = useSelector((store) => store.config.lang);
+  console.log(langKey)
   
   const name = useRef("");
   const email = useRef(null);
@@ -75,33 +82,41 @@ const HeaderForm = () => {
   } 
 
 
-
   return (
     <div className ="flex flex-col justify-center items-center ">
-        <form className="flex flex-col w-[475px] justify-center items-center bg-black rounded-md bg-opacity-80" onSubmit={(e)=>e.preventDefault()}>
-            <h2 className='text-white text-3xl p-8 font-bold'> {SignDetails === true? "Sign Up" :"Sign In"}</h2>
 
-            {SignDetails && <input ref={name} className=" font-semibold w-80 px-4 py-4 m-2 rounded-md bg-opacity-80  bg-slate-700  bg-opacity-70 text-slate-300" type='text' placeholder='Full name'></input>}
+        <form className="w-[350px] flex flex-col sm:w-[475px] md:w-[475px] justify-center items-center bg-black rounded-md bg-opacity-80" onSubmit={(e)=>e.preventDefault()}>
+            <h2 className='text-white text-3xl p-8 font-bold'>
+              { SignDetails === true ? langLogin[langKey].signup :langLogin[langKey].signin}
+              </h2>
 
-            <input ref={email} className=" font-semibold w-80 px-4 py-4 m-2 rounded-md bg-slate-700  bg-opacity-70 text-slate-300" type='text' placeholder='Email address'></input>
+            {SignDetails && <input ref={name} className=" font-semibold w-78 sm:w-80 md:w-80 px-4 py-4 m-2 rounded-md bg-opacity-80  bg-slate-700  bg-opacity-70 text-slate-300" type='text' placeholder={langLogin[langKey].fullname}></input>}
 
-            <input ref={password} className=" font-semibold w-80 px-4 py-4 m-2 rounded-md  bg-slate-700  bg-opacity-70 text-slate-300" type='password' 
-            placeholder='Password'></input>
+            <input ref={email} className=" font-semibold w-78 sm:w-80 md:w-80 px-4 py-4 m-2 rounded-md bg-slate-700  bg-opacity-70 text-slate-300" type='text' placeholder={langLogin[langKey].email}></input>
+
+            <input ref={password} className=" font-semibold w-78 sm:w-80 md:w-80 px-4 py-4 m-2 rounded-md  bg-slate-700  bg-opacity-70 text-slate-300" type='password' 
+            placeholder={langLogin[langKey].password}></input>
 
             <p className=" text-red-600 py-1 px-16 text-center font-bold">{errMsg}</p>
 
-            <button className="px-32 py-3 m-4 text-white bg-red-600 hover:bg-red-700 rounded-md font-bold" 
+            <button className="w-3/6 sm:w-4/6 md:w-4/6 py-3 m-4 text-white bg-red-600 hover:bg-red-700 
+             box-border rounded-md font-bold" 
             onClick={()=>handleValidation()}>
-              {SignDetails === true ? "Sign Up": "Sign In"}</button>
+              {SignDetails === true ?  langLogin[langKey].signup :langLogin[langKey].signin}</button>
 
-            {!SignDetails && <p className='text-white cursor-pointer underline hover:underline-offset-4 from-neutral-200'>Forgot password?</p>
+            {!SignDetails && <p className='text-white cursor-pointer underline hover:underline-offset-4 from-neutral-200'>{langLogin[langKey].forgot }</p>
 }
-            <div className="px-24 pt-14 pb-8 m-2 ">
+            <div className="px-24 pt-8 sm:pt-14 md:pt-14 sm:pb-8 md:pb-8 m-2 ">
 
-                <p className='text-white'>{!SignDetails === true ? "New to Netflix ?" : "Already Registered ?"} <span className="underline hover:underline-offset-4 from-neutral-200 cursor-pointer" onClick={()=>handleSignDetails()}>{!SignDetails === true ? "Sign Up now." : "Sign In Now"}</span></p>
+                <p className='text-white'>
+                  {!SignDetails === true ? langLogin[langKey].netflixSttsNew : langLogin[langKey].netflixSttsOld} 
+                  <span className="underline hover:underline-offset-4 from-neutral-200 cursor-pointer" onClick={()=>handleSignDetails()}>
+                    {!SignDetails === true ? langLogin[langKey].netflixSttsNewLogin :
+                     langLogin[langKey].netflixSttsOldLogin}</span></p>
 
 
-                <p className=' text-slate-300 font-light py-2'>This page is protected by Google reCAPTCHA to ensure you're not a bot. <span className=" text-blue-700 underline hover:underline-offset-4 from-neutral-200 cursor-pointer">Learn more.</span></p>
+                <p className=' text-slate-300 font-light py-2'>{langLogin[langKey].netflixTerm} <span className=" text-blue-700 underline hover:underline-offset-4 from-neutral-200 cursor-pointer">
+                  {langLogin[langKey].netflixLearn}</span></p>
            </div>
         </form>
         
