@@ -23,6 +23,6 @@ export const SUPPORTED_LANGUAGES = [
     {identifier: "german" , name: "German"},
 ]
 
-export const OPENAI_KEY = "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"
+// export const OPENAI_KEY = "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"
 
-// export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY
