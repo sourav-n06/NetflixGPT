@@ -5,7 +5,6 @@ const SecondaryContainer = () => {
   const movies = useSelector( (store) => store.movie);
 
   return (
-
     <div className="bg-black">
       <div className=" relative pt-5 sm:-mt-8 md:-mt-24 lg:-mt-[15%] ">
           <MovieCart title = {"Now playing"} movies ={movies?.movieList}/>

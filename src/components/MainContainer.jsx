@@ -12,7 +12,7 @@ const MainContainer = () => {
     
     if(!movies) return <VideoShimmer/>;
 
-    const randomNumber = getRandomNumber(0, movies.length-1);
+    const randomNumber = getRandomNumber(0, movies?.length-1);
     console.log(randomNumber)
     const movie = movies[randomNumber];
     const { original_title, overview, id } = movie;
