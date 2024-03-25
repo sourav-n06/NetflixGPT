@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { useSelector} from 'react-redux';
 import { addMovieTrailer } from '../utils/movieSlice';
+import VideoShimmer from './VideoShimmer';
 
 
 const VideoBackGround = ({movId}) => {
@@ -20,17 +21,17 @@ const VideoBackGround = ({movId}) => {
         const filterData = json.results.filter((video) => video.type === 'Trailer');
         const Trailer = filterData.length > 0 ? filterData[0] : json.results[0];
         dispatch(addMovieTrailer(Trailer));
-        
+        console.log(Trailer,"frgeg");
     }
 
     useEffect(() =>{
       !trailer && getMovieVideo();
     },[]);
-
+    if(trailer === null) return <VideoShimmer/>
     
   return (
     <div className="w-screen  ">
-      <iframe className="w-screen aspect-video " src={"https://www.youtube.com/embed/"+ trailer?.key +"?si=-SmmOojARPeuDffW&amp;?start=15?&autoplay=1&mute=1"} title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" ></iframe>
+      <iframe className="w-screen h-screen aspect-video " src={"https://www.youtube.com/embed/"+ trailer?.key +"?si=-SmmOojARPeuDffW&amp;?start=15?&autoplay=1&mute=1"} title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" ></iframe>
     </div>
   )
 }

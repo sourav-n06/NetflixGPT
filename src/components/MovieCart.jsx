@@ -1,6 +1,6 @@
 import React from 'react'
 import MoveList from './MoveList'
-
+import { Link } from 'react-router-dom';
 const MovieCart = ({title, movies}) => {
 
     console.log(title);
@@ -12,7 +12,7 @@ const MovieCart = ({title, movies}) => {
             <div className="flex">
                 {movies!=null &&
                     movies.map((movie) => {
-                        return <MoveList key={movie.id} path={movie?.poster_path}/>
+                        return (<Link to={"/browse/" + movie.id} key={movie.id} ><MoveList key={movie.id} path={movie?.poster_path}/></Link>)
                     })
                 }
             </div>
