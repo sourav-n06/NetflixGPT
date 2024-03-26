@@ -29,22 +29,22 @@ const GptSearchBar = () => {
     const handleSearch = async() => {
 
        dispatch(addGptButton());
-      // const gptQuery = "Act as a Movie Recommendation system and suggest some movies for query "+
-      // text.current.value +
-      // ". Only give me 5 movies names comma separated . example : monster, don, fukrey, hero, eternal"
-      // const gptResult = await openai.chat.completions.create({
-      //   messages: [{ role: 'user', content: gptQuery }],
-      //   model: 'gpt-3.5-turbo',
-      // });
-      // console.log(gptResult.choices)
-      // if ( !gptResult.choices.length ) return;
+      const gptQuery = "Act as a Movie Recommendation system and suggest some movies for query "+
+      text.current.value +
+      ". Only give me 5 movies names comma separated . example : monster, don, fukrey, hero, eternal"
+      const gptResult = await openai.chat.completions.create({
+        messages: [{ role: 'user', content: gptQuery }],
+        model: 'gpt-3.5-turbo',
+      });
+      console.log(gptResult.choices)
+      if ( !gptResult.choices.length ) return;
 
-      // const gptMovies = gptResult?.choices[0]?.message.content.split(',');
+      const gptMovies = gptResult?.choices[0]?.message.content.split(',');
 
-      // const promiseArray = gptMovies.map((movie) => searchMovie(movie));
+      const promiseArray = gptMovies.map((movie) => searchMovie(movie));
 
-      // const TMDBresult = await Promise.all(promiseArray);
-      // dispatch(addGptMovies({resultMovies: TMDBresult , MovieNames : gptMovies}));
+      const TMDBresult = await Promise.all(promiseArray);
+      dispatch(addGptMovies({resultMovies: TMDBresult , MovieNames : gptMovies}));
     }
 
   return (
