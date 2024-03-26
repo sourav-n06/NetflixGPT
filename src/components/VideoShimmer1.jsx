@@ -1,9 +1,9 @@
 import React from 'react'
 
-const VideoShimmer = () => {
+const VideoShimmer1 = () => {
   return (
-    <div className="w-screen aspect-video bg-black ">
-        <div className="flex h-screen w-screen items-center justify-center ">
+    <div className="w-screen h-[65%] bg-black bg-opacity-80 mt-6 flex items-center justify-center">
+        <div className="flex h-[65%] w-screen items-center justify-center ">
             <button type="button" className="flex items-center rounded-lg bg-red-600 px-4 py-2 text-white" disabled>
                 <svg className="mr-3 h-5 w-5 animate-spin text-white" src="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -16,4 +16,4 @@ const VideoShimmer = () => {
   )
 }
 
-export default VideoShimmer;
+export default VideoShimmer1

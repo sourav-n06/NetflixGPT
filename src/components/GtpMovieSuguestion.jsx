@@ -2,6 +2,8 @@ import React from 'react'
 import { useSelector } from "react-redux"
 import MovieCart from './MovieCart';
 import { BG_URl } from '../utils/constant';
+import VideoShimmer from './VideoShimmer';
+
 const GtpMovieSuguestion = () => {
   const { GptMovies, GptMoviesNames } = useSelector((store) => store.gpt);
   if(!GptMoviesNames) return null;

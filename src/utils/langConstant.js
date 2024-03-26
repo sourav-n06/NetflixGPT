@@ -22,9 +22,28 @@ export const lang = {
     german : {
         search : "Suchen",
         gptSearchPlaceholder : "Was möchtest du heute sehen?"
+    },
+    japa: {
+        search: "検索",
+        gptSearchPlaceholder: "今日は何を見たいですか？"
+    },
+    chini:{
+        search: "搜索",
+        gptSearchPlaceholder: "今天想看什么？"
+    },
+    urdu :{
+        search: "تلاش کریں",
+        gptSearchPlaceholder: "آج آپ کیا دیکھنا چاہتے ہیں؟"
+    },
+    portu:{
+        search: "Pesquisar",
+        gptSearchPlaceholder: "O que gostaria de assistir hoje?"
     }
    
 };
+
+
+
 
 
 export const langLogin = {
@@ -178,8 +197,5 @@ export const langLogin = {
         netflixTerm: "此页面受 Google reCAPTCHA 保护，以确保您不是机器人。",
         netflixLearn: "了解更多"
     }
-    
-    
-    
-    
+      
 };
