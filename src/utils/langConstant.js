@@ -31,7 +31,8 @@ export const langLogin = {
     en : {
         fullname : "Full name",
         email: "Email address",
-        password : "Password",
+        passwordNew : " Create password",
+        passwordOld : "Password",
         signup : "Sign Up",
         signin : "Sign In",
         forgot : "Forgot Password ?",
@@ -45,7 +46,8 @@ export const langLogin = {
     hindi : {
         fullname : "पूरा नाम",
         email: "मेल पता",
-        password : "पासवर्ड",
+        passwordNew : "पासवर्ड बनाएं",
+        passwordOld : "पासवर्ड",
         signup : "साइन अप करें",
         signin : "दाखिल करना",
         forgot : "पासवर्ड भूल गए ?",
@@ -59,7 +61,8 @@ export const langLogin = {
     russian : {
         fullname : "Полное имя",
         email: "Адрес электронной почты",
-        password : "Пароль",
+        passwordNew : "Придумайте пароль",
+        passwordOld : "Пароль",
         signup : "Зарегистрироваться",
         signin : "Войти",
         forgot : "Забыли пароль ?",
@@ -73,7 +76,8 @@ export const langLogin = {
     spanish : {
         fullname : "Nombre completo",
         email: "Dirección de correo electrónico",
-        password : "Contraseña",
+        passwordNew : "Crear contraseña",
+        passwordOld : "Contraseña",
         signup : "Inscribirse",
         signin : "Iniciar sesión",
         forgot : "Has olvidado tu contraseña ? ",
@@ -87,7 +91,8 @@ export const langLogin = {
     bangla : {
         fullname : "পুরো নাম",
         email: "ইমেইল ঠিকানা",
-        password : "পাসওয়ার্ড",
+        passwordNew : "পাসওয়ার্ড সৃষ্টি করুন",
+        passwordOld : "পাসওয়ার্ড",
         signup : "নিবন্ধন করুন",
         signin : "সাইন ইন করুন",
         forgot : "পাসওয়ার্ড ভুলে গেছেন ? ",
@@ -101,7 +106,8 @@ export const langLogin = {
     german : {
         fullname : "Vollständiger Name",
         email: "E-Mail-Adresse",
-        password : "Passwort",
+        passwordNew : "Passwort erstellen",
+        passwordOld : "Passwort",
         signup : "Melden Sie sich an",
         signin : "Anmelden",
         forgot : "Passwort vergessen ? ",
@@ -111,5 +117,69 @@ export const langLogin = {
         netflixSttsOldLogin : "Jetzt einschreiben",
         netflixTerm : "Diese Seite ist durch Google reCAPTCHA geschützt, um sicherzustellen, dass Sie kein Bot sind." ,
         netflixLearn : "Erfahren Sie mehr",
-    } 
+    },
+    portu: {
+        fullname: "Nome completo",
+        email: "Endereço de e-mail",
+        passwordNew: "Criar senha",
+        passwordOld: "Senha",
+        signup: "Inscrever-se",
+        signin: "Entrar",
+        forgot: "Esqueceu a senha?",
+        netflixSttsNew: "Novo no Netflix?",
+        netflixSttsOld: "Já registrado?",
+        netflixSttsNewLogin: "Inscreva-se agora",
+        netflixSttsOldLogin: "Entrar agora",
+        netflixTerm: "Esta página é protegida pelo Google reCAPTCHA para garantir que você não é um robô.",
+        netflixLearn: "Saiba mais"
+    },
+    japa :{
+        fullname: "フルネーム",
+        email: "メールアドレス",
+        passwordNew: "パスワードを作成する",
+        passwordOld: "パスワード",
+        signup: "サインアップ",
+        signin: "サインイン",
+        forgot: "パスワードをお忘れですか？",
+        netflixSttsNew: "Netflixの新規利用者？",
+        netflixSttsOld: "すでに登録済み？",
+        netflixSttsNewLogin: "今すぐ登録",
+        netflixSttsOldLogin: "今すぐサインイン",
+        netflixTerm: "このページはGoogle reCAPTCHAによって保護されています。ロボットでないことを確認します。",
+        netflixLearn: "詳細を見る"
+    },
+    urdu: {
+        fullname: "پورا نام",
+        email: "ای میل ایڈریس",
+        passwordNew: "پاس ورڈ بنائیں",
+        passwordOld: "پاس ورڈ",
+        signup: "سائن اپ",
+        signin: "سائن ان",
+        forgot: "پاس ورڈ بھول گئے ہیں؟",
+        netflixSttsNew: "Netflix میں نیا ہیں؟",
+        netflixSttsOld: "پہلے ہی رجسٹرڈ ہیں؟",
+        netflixSttsNewLogin: "ابھی سائن اپ کریں",
+        netflixSttsOldLogin: "ابھی سائن ان کریں",
+        netflixTerm: "اس صفحہ کو گوگل ریکیپچا سے حفاظت دی جاتی ہے تاکہ یہ یقینی بنایا جا سکے کہ آپ روبوٹ نہیں ہیں۔",
+        netflixLearn: "مزید معلومات"
+    },
+    chini :{
+        fullname: "全名",
+        email: "电子邮件地址",
+        passwordNew: "创建密码",
+        passwordOld: "密码",
+        signup: "注册",
+        signin: "登录",
+        forgot: "忘记密码？",
+        netflixSttsNew: "是 Netflix 新用户？",
+        netflixSttsOld: "已经注册？",
+        netflixSttsNewLogin: "立即注册",
+        netflixSttsOldLogin: "立即登录",
+        netflixTerm: "此页面受 Google reCAPTCHA 保护，以确保您不是机器人。",
+        netflixLearn: "了解更多"
+    }
+    
+    
+    
+    
 };

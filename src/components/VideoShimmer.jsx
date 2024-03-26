@@ -2,7 +2,7 @@ import React from 'react'
 
 const VideoShimmer = () => {
   return (
-    <div className="w-screen aspect-video bg-black sm:bg-slate-200 md:bg-slate-200 lg:bg-slate-200">
+    <div className="w-screen aspect-video bg-black">
         <div className="flex h-screen w-screen items-center justify-center ">
             <button type="button" className="flex items-center rounded-lg bg-red-600 px-4 py-2 text-white" disabled>
                 <svg className="mr-3 h-5 w-5 animate-spin text-white" src="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

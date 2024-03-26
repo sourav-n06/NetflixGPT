@@ -21,6 +21,11 @@ export const SUPPORTED_LANGUAGES = [
     {identifier: "spanish" , name: "Spanish"},
     {identifier: "bangla" , name: "Bangla"},
     {identifier: "german" , name: "German"},
+    {identifier: "portu" , name: "Portuguese"},
+    {identifier: "japa" , name: "Japanese"},
+    {identifier: "urdu" , name: "Urdu"},
+    {identifier: "chini" , name: "Chinese"},
+    
 ]
 
 // export const OPENAI_KEY = "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"

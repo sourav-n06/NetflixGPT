@@ -14,7 +14,7 @@ const Header = () => {
     <div className="px-16 bg-gradient-to-b from-neutral-900 md:bg-gradient-to-b from-neutral-900 md:px-40 py-2 flex justify-between">
         <img className="hidden sm:inline-block md:inline-block w-48 " src= {NetflixImage} alt="logo"/>
         <img className=" w-6 inline-block sm:hidden  md:hidden " src= "https://upload.wikimedia.org/wikipedia/commons/0/0c/Netflix_2015_N_logo.svg"/>
-          <select className="mt-2 h-10 px-4 md:mt-4  rounded-md bg-slate-800 text-white"
+          <select className="mt-2 h-10 px-2 sm:px-4 md:px-4 lg:px-4 md:mt-4  rounded-md bg-slate-800 text-white"
           onChange={handleLang} >
           {
             SUPPORTED_LANGUAGES.map((lang) => {

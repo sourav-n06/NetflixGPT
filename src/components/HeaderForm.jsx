@@ -86,7 +86,7 @@ const HeaderForm = () => {
     <div className ="flex flex-col justify-center items-center ">
 
         <form className="w-[350px] flex flex-col sm:w-[475px] md:w-[475px] justify-center items-center bg-black rounded-md bg-opacity-80" onSubmit={(e)=>e.preventDefault()}>
-            <h2 className='text-white text-3xl p-8 font-bold'>
+            <h2 className='text-white text-3xl p-4 sm:p-6 md:p-8 lg:p-8 font-bold'>
               { SignDetails === true ? langLogin[langKey].signup :langLogin[langKey].signin}
               </h2>
 
@@ -95,7 +95,7 @@ const HeaderForm = () => {
             <input ref={email} className=" font-semibold w-78 sm:w-80 md:w-80 px-4 py-4 m-2 rounded-md bg-slate-700  bg-opacity-70 text-slate-300" type='text' placeholder={langLogin[langKey].email}></input>
 
             <input ref={password} className=" font-semibold w-78 sm:w-80 md:w-80 px-4 py-4 m-2 rounded-md  bg-slate-700  bg-opacity-70 text-slate-300" type='password' 
-            placeholder={langLogin[langKey].password}></input>
+            placeholder={ SignDetails === true ? langLogin[langKey].passwordNew :langLogin[langKey].passwordOld}></input>
 
             <p className=" text-red-600 py-1 px-16 text-center font-bold">{errMsg}</p>
 
@@ -106,7 +106,7 @@ const HeaderForm = () => {
 
             {!SignDetails && <p className='text-white cursor-pointer underline hover:underline-offset-4 from-neutral-200'>{langLogin[langKey].forgot }</p>
 }
-            <div className="px-24 pt-8 sm:pt-14 md:pt-14 sm:pb-8 md:pb-8 m-2 ">
+            <div className="px-16 pt-8 sm:pt-14 md:pt-14 sm:pb-8 md:pb-8 m-2 lg:px-24 lg:pt-6">
 
                 <p className='text-white'>
                   {!SignDetails === true ? langLogin[langKey].netflixSttsNew : langLogin[langKey].netflixSttsOld} 
