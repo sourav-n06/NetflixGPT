@@ -90,7 +90,7 @@ const HeaderForm = () => {
               { SignDetails === true ? langLogin[langKey].signup :langLogin[langKey].signin}
               </h2>
 
-            {SignDetails && <input ref={name} className=" font-semibold w-78 sm:w-80 md:w-80 px-4 py-4 m-2 rounded-md bg-opacity-80  bg-slate-700  bg-opacity-70 text-slate-300" type='text' placeholder={langLogin[langKey].fullname}></input>}
+            {SignDetails && <input ref={name} className=" font-semibold w-78 sm:w-80 md:w-80 px-4 py-4 m-2 rounded-md bg-opacity-70  bg-slate-700  text-slate-300" type='text' placeholder={langLogin[langKey].fullname}></input>}
 
             <input ref={email} className=" font-semibold w-78 sm:w-80 md:w-80 px-4 py-4 m-2 rounded-md bg-slate-700  bg-opacity-70 text-slate-300" type='text' placeholder={langLogin[langKey].email}></input>
 
