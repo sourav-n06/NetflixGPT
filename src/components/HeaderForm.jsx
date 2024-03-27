@@ -99,7 +99,7 @@ const HeaderForm = () => {
 
             <p className=" text-red-600 py-1 px-16 text-center font-bold">{errMsg}</p>
 
-            <button className="w-3/6 sm:w-4/6 md:w-4/6 py-3 m-4 text-white bg-red-600 hover:bg-red-700 
+            <button className="w-[62%] sm:w-4/6 md:w-4/6 lg:w-4/6 py-3 m-4 text-white bg-red-600 hover:bg-red-700 
              box-border rounded-md font-bold" 
             onClick={()=>handleValidation()}>
               {SignDetails === true ?  langLogin[langKey].signup :langLogin[langKey].signin}</button>
