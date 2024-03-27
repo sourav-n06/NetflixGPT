@@ -106,7 +106,7 @@ const HeaderForm = () => {
 
             {!SignDetails && <p className='text-white cursor-pointer underline hover:underline-offset-4 from-neutral-200'>{langLogin[langKey].forgot }</p>
 }
-            <div className="px-16 pt-8 sm:pt-14 md:pt-14 sm:pb-8 md:pb-8 m-2 lg:px-24 lg:pt-6">
+            <div className="px-16 pt-8 sm:pt-10 md:pt-8 sm:pb-8 md:pb-6 m-2 lg:px-24 lg:pt-6">
 
                 <p className='text-white'>
                   {!SignDetails === true ? langLogin[langKey].netflixSttsNew : langLogin[langKey].netflixSttsOld} 
